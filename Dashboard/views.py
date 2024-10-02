@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from docx import Document
 from .forms import SpecialTestimonyForm, IvaSalesTestimonyForm, MunicipalityNoticesForm, BuySellForm
 import os
-import pythoncom
+
 import base64
 from .models import SpecialTestimony, IvaSalesTestimony, MunicipalityNotices, BuySell
 
@@ -80,9 +80,9 @@ def replace_text_in_docx(docx_path, replacements, output_path):
 
 
 def generate_special_testimony_document(request):
-    pythoncom.CoInitialize()
+    
 
-    try:
+    
         if request.method == 'POST':
             form = SpecialTestimonyForm(request.POST)
             if form.is_valid():
@@ -137,14 +137,13 @@ def generate_special_testimony_document(request):
 
         return render(request, 'documents/special-testimony-document.html', {'form': form})
 
-    finally:
-        pythoncom.CoUninitialize()
+    
 
 
 def generate_iva_sales_testimony_document(request):
-    pythoncom.CoInitialize()
+    
 
-    try:
+   
         if request.method == 'POST':
             form = IvaSalesTestimonyForm(request.POST)
             if form.is_valid():
@@ -210,14 +209,12 @@ def generate_iva_sales_testimony_document(request):
 
         return render(request, 'documents/iva-sales-testimony-document.html', {'form': form})
 
-    finally:
-        pythoncom.CoUninitialize()
+  
 
 
 def generate_municipality_notices_document(request):
-    pythoncom.CoInitialize()
-
-    try:
+   
+    
         if request.method == 'POST':
             form = MunicipalityNoticesForm(request.POST)
             if form.is_valid():
@@ -346,14 +343,13 @@ def generate_municipality_notices_document(request):
 
         return render(request, 'documents/municipality_notices-document.html', {'form': form})
 
-    finally:
-        pythoncom.CoUninitialize()
+    
 
 
 def generate_buy_sell_document(request):
-    pythoncom.CoInitialize()
+    
 
-    try:
+    
         if request.method == 'POST':
             form = BuySellForm(request.POST)
             if form.is_valid():
@@ -454,8 +450,7 @@ def generate_buy_sell_document(request):
 
         return render(request, 'documents/buy-sell-document.html', {'form': form})
 
-    finally:
-        pythoncom.CoUninitialize()
+    
 
 
 # Function save file to base64 for database
