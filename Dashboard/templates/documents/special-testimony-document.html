@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2 class="text-center">GENERAR TESTIMONIO ESPECIAL</h2>
+    <form id="special-testimony-form" method="post" class="mt-4">
+      {% csrf_token %}
+
+      <div class="form-group mb-3">
+        {{ form.deed_numbers_letters.label_tag }}
+        {{ form.deed_numbers_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.deed_numbers_digits.label_tag }}
+        {{ form.deed_numbers_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.municipality.label_tag }}
+        {{ form.municipality|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.department.label_tag }}
+        {{ form.department|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.day_letters.label_tag }}
+        {{ form.day_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.month_letters_a.label_tag }}
+        {{ form.month_letters_a|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.year_letters.label_tag }}
+        {{ form.year_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.day_digits.label_tag }}
+        {{ form.day_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.month_letters_g.label_tag }}
+        {{ form.month_letters_g|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.year_digits.label_tag }}
+        {{ form.year_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.notary_office.label_tag }}
+        {{ form.notary_office|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.name_notary_office.label_tag }}
+        {{ form.name_notary_office|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.number_of_pages.label_tag }}
+        {{ form.number_of_pages|add_class:"form-control" }}
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Generar Documento</button>
+      </div>
+
+      {% if error %}
+      <div class="alert alert-danger mt-3">{{ error }}</div>
+      {% endif %}
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.getElementById('special-testimony-form').onsubmit = function () {
+    setTimeout(function () {
+      window.location.href = "{% url 'download_special_testimony_docx' %}";
+    }, 30000);
+  };
+</script>
+{% endblock %}

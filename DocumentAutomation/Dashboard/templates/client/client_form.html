@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h1 class="text-center">Crear Cliente</h1>
+    <form method="post" class="mt-4">
+      {% csrf_token %}
+
+      <div class="form-group mb-3">
+        {{ form.name.label_tag }}
+        {{ form.name|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.id_number.label_tag }}
+        {{ form.id_number|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.tax_id.label_tag }}
+        {{ form.tax_id|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.whatsapp.label_tag }}
+        {{ form.whatsapp|add_class:"form-control" }}
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'client_list' %}" class="btn btn-secondary">Cancelar</a>
+      </div>
+
+      {% if error %}
+      <div class="alert alert-danger mt-3">{{ error }}</div>
+      {% endif %}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

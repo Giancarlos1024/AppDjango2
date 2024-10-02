@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1 class="text-center">¿Qué documento necesita generar?</h1>
+<div class="d-flex flex-column align-items-center mt-4">
+  {% for option in options_documents %}
+  {% if option == 'COMPRAVENTA SIMPLE' %}
+  <a href="{% url 'generate_buy_sell_document' %}" class="btn btn-dark mb-3 w-50 text-center">
+    {{ option }}
+  </a>
+  {% elif option == 'AVISOS MUNICIPALIDAD DICABI' %}
+  <a href="{% url 'generate_municipality_notices_document' %}" class="btn btn-dark mb-3 w-50 text-center">
+    {{ option }}
+  </a>
+  {% elif option == 'TESTIMONIO COMPRAVENTA IVA' %}
+  <a href="{% url 'generate_iva_sales_testimony_document' %}" class="btn btn-dark mb-3 w-50 text-center">
+    {{ option }}
+  </a>
+  {% elif option == 'TESTIMONIO ESPECIAL' %}
+  <a href="{% url 'generate_special_testimony_document' %}" class="btn btn-dark mb-3 w-50 text-center">
+    {{ option }}
+  </a>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}

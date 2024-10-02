@@ -1,0 +1,254 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2 class="text-center">GENERAR AVISOS MUNICIPALIDAD DICABI</h2>
+    <form id="municipality-notices-form" method="post" class="mt-4">
+      {% csrf_token %}
+
+      <div class="form-group mb-3">
+        {{ form.municipality.label_tag }}
+        {{ form.municipality|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.department.label_tag }}
+        {{ form.department|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.deed_numbers_letters.label_tag }}
+        {{ form.deed_numbers_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.deed_numbers_digits.label_tag }}
+        {{ form.deed_numbers_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.address_property.label_tag }}
+        {{ form.address_property|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.municipality_property.label_tag }}
+        {{ form.municipality_property|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.department_property.label_tag }}
+        {{ form.department_property|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.number_farm_letters.label_tag }}
+        {{ form.number_farm_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.number_farm_digits.label_tag }}
+        {{ form.number_farm_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.number_folio_letters.label_tag }}
+        {{ form.number_folio_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.number_folio_digits.label_tag }}
+        {{ form.number_folio_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.number_book_letters.label_tag }}
+        {{ form.number_book_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.number_book_digits.label_tag }}
+        {{ form.number_book_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.area_state_letters.label_tag }}
+        {{ form.area_state_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.area_state_digits.label_tag }}
+        {{ form.area_state_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.value_property_letters.label_tag }}
+        {{ form.value_property_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.value_property_digits.label_tag }}
+        {{ form.value_property_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.day_letters.label_tag }}
+        {{ form.day_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.month_letters_a.label_tag }}
+        {{ form.month_letters_a|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.year_letters.label_tag }}
+        {{ form.year_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.day_digits.label_tag }}
+        {{ form.day_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.month_letters_g.label_tag }}
+        {{ form.month_letters_g|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.year_digits.label_tag }}
+        {{ form.year_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.notary_office.label_tag }}
+        {{ form.notary_office|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.lawyer_office.label_tag }}
+        {{ form.lawyer_office|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.name_notary_office.label_tag }}
+        {{ form.name_notary_office|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.collegiate_number.label_tag }}
+        {{ form.collegiate_number|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.address_receive_notifications.label_tag }}
+        {{ form.address_receive_notifications|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.municipality_receive_notifications.label_tag }}
+        {{ form.municipality_receive_notifications|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.department_receive_notifications.label_tag }}
+        {{ form.department_receive_notifications|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.email_notary_office.label_tag }}
+        {{ form.email_notary_office|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_name.label_tag }}
+        {{ form.seller_name|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_dpi_number.label_tag }}
+        {{ form.seller_dpi_number|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_nit_number.label_tag }}
+        {{ form.seller_nit_number|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_home_address.label_tag }}
+        {{ form.seller_home_address|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_home_municipality.label_tag }}
+        {{ form.seller_home_municipality|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_home_department.label_tag }}
+        {{ form.seller_home_department|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_registration.label_tag }}
+        {{ form.seller_registration|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_name.label_tag }}
+        {{ form.buyer_name|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_dpi_number.label_tag }}
+        {{ form.buyer_dpi_number|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_nit_number.label_tag }}
+        {{ form.buyer_nit_number|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_home_address.label_tag }}
+        {{ form.buyer_home_address|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_home_municipality.label_tag }}
+        {{ form.buyer_home_municipality|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_home_department.label_tag }}
+        {{ form.buyer_home_department|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_registration.label_tag }}
+        {{ form.buyer_registration|add_class:"form-control" }}
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Generar Documento</button>
+      </div>
+
+      {% if error %}
+      <div class="alert alert-danger mt-3">{{ error }}</div>
+      {% endif %}
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.getElementById('municipality-notices-form').onsubmit = function () {
+    setTimeout(function () {
+      window.location.href = "{% url 'download_municipality_notices_docx' %}";
+    }, 30000);
+  };
+</script>
+{% endblock %}

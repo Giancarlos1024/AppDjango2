@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Clientes</h2>
+<a href="{% url 'client_create' %}" class="btn btn-primary mb-3">Crear Cliente</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>DPI</th>
+      <th>NIT</th>
+      <th>WhatsApp</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for client in clients %}
+    <tr>
+      <td>{{ client.name }}</td>
+      <td>{{ client.id_number }}</td>
+      <td>{{ client.tax_id }}</td>
+      <td>{{ client.whatsapp }}</td>
+      <td>
+        <a href="{% url 'client_edit' client.id %}" class="btn btn-warning">Editar</a>
+        <a href="{% url 'client_delete' client.id %}" class="btn btn-danger">Eliminar</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="5">No hay clientes disponibles.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

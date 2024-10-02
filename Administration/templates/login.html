@@ -1,0 +1,127 @@
+{% load widget_tweaks %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analisis de datos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+
+    body {
+      background-color: #053770;
+      color: var(--text-color);
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .login-form {
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgb(255, 255, 255);
+      background-color: var(--form-bg-color);
+      color: var(--text-color);
+    }
+
+    .form-group label {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--label-color);
+    }
+
+    .form-control {
+      height: 40px;
+      font-size: 14px;
+      border-radius: 5px;
+      border: 1px solid #ced4da;
+    }
+
+    .btn-primary {
+      height: 45px;
+      font-size: 16px;
+      background-color: #0056b3;
+      border-color: #0056b3;
+      border-radius: 5px;
+    }
+
+    .btn-primary:hover {
+      background-color: #004085;
+      border-color: #004085;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --border-color: #444444;
+        --form-bg-color: #4a4444;
+        --label-color: #cccccc;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #000000;
+        --border-color: #cccccc;
+        --form-bg-color: #f8f9fa;
+        --label-color: #000000;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="login-form">
+      <!-- Agregar imagen del logo -->
+      <img src="{% static 'img/logo.jpg' %}" alt="Logo" class="img-fluid mx-auto d-block"
+        style="max-width: 150px; margin-bottom: 20px;">
+
+      <h1 class="text-center">Bienvenid@</h1>
+      <form action="" method="post" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="{{ form.username.id_for_label }}">Usuario:</label>
+          {{ form.username|add_class:"form-control" }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.password.id_for_label }}">Contraseña:</label>
+          {{ form.password|add_class:"form-control" }}
+        </div>
+        <div class="text-center mt-3">
+          <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        </div>
+      </form>
+      {% if error %}
+      <div class="alert alert-danger mt-3">{{ error }}</div>
+      {% endif %}
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

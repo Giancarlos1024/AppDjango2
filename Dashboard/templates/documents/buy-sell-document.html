@@ -1,0 +1,209 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2 class="text-center">GENERAR COMPRAVENTA SIMPLE</h2>
+    <form id="buy-sell-form" method="post" class="mt-4">
+      {% csrf_token %}
+
+      <div class="form-group mb-3">
+        {{ form.deed_number_letters.label_tag }}
+        {{ form.deed_number_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.deed_number_digits.label_tag }}
+        {{ form.deed_number_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.municipality.label_tag }}
+        {{ form.municipality|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.day_letters.label_tag }}
+        {{ form.day_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.month_letters.label_tag }}
+        {{ form.month_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.year_letters.label_tag }}
+        {{ form.year_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.notary_name.label_tag }}
+        {{ form.notary_name|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.notary_office.label_tag }}
+        {{ form.notary_office|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_name.label_tag }}
+        {{ form.seller_name|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_age_letters.label_tag }}
+        {{ form.seller_age_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_civil_status.label_tag }}
+        {{ form.seller_civil_status|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_nationality.label_tag }}
+        {{ form.seller_nationality|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_profession.label_tag }}
+        {{ form.seller_profession|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_department.label_tag }}
+        {{ form.seller_department|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_dpi_number_letters.label_tag }}
+        {{ form.seller_dpi_number_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.seller_dpi_number_digits.label_tag }}
+        {{ form.seller_dpi_number_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_name.label_tag }}
+        {{ form.buyer_name|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_age_letters.label_tag }}
+        {{ form.buyer_age_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_civil_status.label_tag }}
+        {{ form.buyer_civil_status|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_nationality.label_tag }}
+        {{ form.buyer_nationality|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_profession.label_tag }}
+        {{ form.buyer_profession|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_department.label_tag }}
+        {{ form.buyer_department|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_dpi_number_letters.label_tag }}
+        {{ form.buyer_dpi_number_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.buyer_dpi_number_digits.label_tag }}
+        {{ form.buyer_dpi_number_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.farm_number_letters.label_tag }}
+        {{ form.farm_number_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.farm_number_digits.label_tag }}
+        {{ form.farm_number_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.folio_number_letters.label_tag }}
+        {{ form.folio_number_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.folio_number_digits.label_tag }}
+        {{ form.folio_number_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.book_number_letters.label_tag }}
+        {{ form.book_number_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.book_number_digits.label_tag }}
+        {{ form.book_number_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.property_department.label_tag }}
+        {{ form.property_department|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.municipality_address.label_tag }}
+        {{ form.municipality_address|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.property_address.label_tag }}
+        {{ form.property_address|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.property_type.label_tag }}
+        {{ form.property_type|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.sale_value_letters.label_tag }}
+        {{ form.sale_value_letters|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.sale_value_digits.label_tag }}
+        {{ form.sale_value_digits|add_class:"form-control" }}
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Generar Documento</button>
+      </div>
+
+      {% if error %}
+      <div class="alert alert-danger mt-3">{{ error }}</div>
+      {% endif %}
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.getElementById('buy-sell-form').onsubmit = function () {
+    setTimeout(function () {
+      window.location.href = "{% url 'download_buy_sell_docx' %}";
+    }, 30000);
+  };
+</script>
+{% endblock %}

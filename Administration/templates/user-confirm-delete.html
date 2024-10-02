@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center">Confirmar eliminación</h1>
+  <p class="text-center">¿Está seguro de que desea eliminar el usuario <strong>{{ user.username }}</strong>?</p>
+  <form action="" method="post" class="text-center">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="{% url 'user-list' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

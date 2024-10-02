@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h1 class="text-center">Crear cuenta</h1>
+    <form action="{% url 'create-account' %}" method="post" class="mt-4">
+      {% csrf_token %}
+
+      <div class="form-group mb-3">
+        {{ form.first_name.label_tag }}
+        {{ form.first_name|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.last_name.label_tag }}
+        {{ form.last_name|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.email.label_tag }}
+        {{ form.email|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.username.label_tag }}
+        {{ form.username|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.password1.label_tag }}
+        {{ form.password1|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.password2.label_tag }}
+        {{ form.password2|add_class:"form-control" }}
+      </div>
+
+      <div class="form-group mb-3">
+        {{ form.role.label_tag }}
+        {{ form.role|add_class:"form-control" }}
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Crear</button>
+        <a href="{% url 'user-list' %}" class="btn btn-secondary">Cancelar</a>
+      </div>
+
+      {% if error %}
+      <div class="alert alert-danger mt-3">{{ error }}</div>
+      {% endif %}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
